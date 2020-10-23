@@ -1,0 +1,13 @@
+{
+  "name": "react-element-resize-events",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "maa105",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.1"
+  }
+}
