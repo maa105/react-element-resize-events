@@ -18,16 +18,18 @@ const Div = (props = {}) => {
     : 'relative'
   );
   useEffect(() => {
-    const iframeWindow = ref.current.contentWindow;
-    iframeWindow.onresize = () => {
-      onResize({ width: iframeWindow.innerWidth, height: iframeWindow.innerHeight, init: false });
-    };
-    onResize({ width: iframeWindow.innerWidth, height: iframeWindow.innerHeight, init: true });
+    if(onResize) {
+      const iframeWindow = ref.current.contentWindow;
+      iframeWindow.onresize = () => {
+        onResize({ width: iframeWindow.innerWidth, height: iframeWindow.innerHeight, init: false });
+      };
+      onResize({ width: iframeWindow.innerWidth, height: iframeWindow.innerHeight, init: true });
+    }
   }, [onResize]);
   return (
     <div style={{ ...style, position  }} {...restProps}>
-      <iframe ref={ref} frameBorder={0} style={{ position: 'absolute', border: 0, margin: 0, padding: 0, top: 0, bottom: 0, left: 0, right: 0, width: '100%', height: '100%' }} />
-      {children}
+      <iframe ref={ref} frameBorder={0} style={{ position: 'absolute', backgroundColor: 'transparent', border: 0, margin: 0, padding: 0, top: 0, bottom: 0, left: 0, right: 0, width: '100%', height: '100%' }} />
+      <div style={{ position: 'relative' }}>{children}</div>
     </div>
   ); 
 };

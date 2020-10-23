@@ -2,6 +2,8 @@
   "name": "react-element-resize-events",
   "version": "1.0.0",
   "description": "",
+  "repository": "https://github.com/maa105/react-element-resize-events",
+  "homepage": "https://github.com/maa105/react-element-resize-events",
   "main": "index.js",
   "scripts": {
   },
